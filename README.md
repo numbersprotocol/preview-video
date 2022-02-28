@@ -20,6 +20,9 @@ npx cap sync
 * [`playFullScreenFromRemote(...)`](#playfullscreenfromremote)
 * [`playFullScreenFromLocal(...)`](#playfullscreenfromlocal)
 * [`stopFullScreen()`](#stopfullscreen)
+* [`addListener('iosPlayerDismissed', ...)`](#addlisteneriosplayerdismissed)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -109,5 +112,39 @@ stopFullScreen() => Promise<void>
 ```
 
 --------------------
+
+
+### addListener('iosPlayerDismissed', ...)
+
+```typescript
+addListener(eventName: 'iosPlayerDismissed', listenerFunc: IOSPlayerDismissed) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                                              |
+| ------------------ | ----------------------------------------------------------------- |
+| **`eventName`**    | <code>'iosPlayerDismissed'</code>                                 |
+| **`listenerFunc`** | <code><a href="#iosplayerdismissed">IOSPlayerDismissed</a></code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
+
+### Type Aliases
+
+
+#### IOSPlayerDismissed
+
+<code>(data: any): void</code>
 
 </docgen-api>
