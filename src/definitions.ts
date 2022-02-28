@@ -1,9 +1,9 @@
 export interface PreviewVideoPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
-  previewStartFromRemote(url: string): Promise<void>;
-  previewStartFromLocal(path: string): Promise<void>;
+  previewStartFromRemote(options: { url: string }): Promise<void>;
+  previewStartFromLocal(options: { path: string }): Promise<void>;
   previewStop(): Promise<void>;
-  playFullScreenFromRemote(url: string): Promise<void>;
-  playFullScreenFromLocal(path: string): Promise<void>;
+  playFullScreenFromRemote(options: { url: string }): Promise<void>;
+  playFullScreenFromLocal(options: { path: string }): Promise<void>;
   stopFullScreen(): Promise<void>;
 }

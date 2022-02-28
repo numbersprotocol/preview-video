@@ -14,6 +14,12 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`previewStartFromRemote(...)`](#previewstartfromremote)
+* [`previewStartFromLocal(...)`](#previewstartfromlocal)
+* [`previewStop()`](#previewstop)
+* [`playFullScreenFromRemote(...)`](#playfullscreenfromremote)
+* [`playFullScreenFromLocal(...)`](#playfullscreenfromlocal)
+* [`stopFullScreen()`](#stopfullscreen)
 
 </docgen-index>
 
@@ -31,6 +37,76 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 | **`options`** | <code>{ value: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### previewStartFromRemote(...)
+
+```typescript
+previewStartFromRemote(options: { url: string; }) => Promise<void>
+```
+
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ url: string; }</code> |
+
+--------------------
+
+
+### previewStartFromLocal(...)
+
+```typescript
+previewStartFromLocal(options: { path: string; }) => Promise<void>
+```
+
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ path: string; }</code> |
+
+--------------------
+
+
+### previewStop()
+
+```typescript
+previewStop() => Promise<void>
+```
+
+--------------------
+
+
+### playFullScreenFromRemote(...)
+
+```typescript
+playFullScreenFromRemote(options: { url: string; }) => Promise<void>
+```
+
+| Param         | Type                          |
+| ------------- | ----------------------------- |
+| **`options`** | <code>{ url: string; }</code> |
+
+--------------------
+
+
+### playFullScreenFromLocal(...)
+
+```typescript
+playFullScreenFromLocal(options: { path: string; }) => Promise<void>
+```
+
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ path: string; }</code> |
+
+--------------------
+
+
+### stopFullScreen()
+
+```typescript
+stopFullScreen() => Promise<void>
+```
 
 --------------------
 
