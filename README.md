@@ -50,6 +50,8 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 previewStartFromRemote(options: { url: string; }) => Promise<void>
 ```
 
+Not implemented for iOS, Android no usage in our case for now
+
 | Param         | Type                          |
 | ------------- | ----------------------------- |
 | **`options`** | <code>{ url: string; }</code> |
@@ -63,6 +65,8 @@ previewStartFromRemote(options: { url: string; }) => Promise<void>
 previewStartFromLocal(options: { path: string; }) => Promise<void>
 ```
 
+Not implemented for iOS, Android no usage in our case for now
+
 | Param         | Type                           |
 | ------------- | ------------------------------ |
 | **`options`** | <code>{ path: string; }</code> |
@@ -75,6 +79,8 @@ previewStartFromLocal(options: { path: string; }) => Promise<void>
 ```typescript
 previewStop() => Promise<void>
 ```
+
+Not implemented for iOS, Android no usage in our case for now
 
 --------------------
 
