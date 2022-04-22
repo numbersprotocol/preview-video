@@ -7,26 +7,26 @@ export class PreviewVideoWeb extends WebPlugin implements PreviewVideoPlugin {
     console.log('ECHO', options);
     return options;
   }
-  async previewStartFromRemote(options: { url: string }): Promise<{ value: string }> {
+  previewStartFromRemote(options: { url: string }): Promise<void> {
     console.log(`previewStartFromRemote: options: ${options}`);
-    return { value: 'Method not implemented.' };
+    throw new Error('Method not implemented.');
   }
-  async previewStartFromLocal(options: { path: string }): Promise<{ value: string }> {
+  previewStartFromLocal(options: { path: string }): Promise<void> {
     console.log(`previewStartFromLocal: options: ${options}`);
-    return { value: 'Method not implemented.' };
+    throw new Error('Method not implemented.');
   }
-  async previewStop(): Promise<{ value: string }> {
-    return { value: 'Method not implemented.' };
+  previewStop(): Promise<void> {
+    throw new Error('Method not implemented.');
   }
-  async playFullScreenFromRemote(options: { url: string }): Promise<{ value: string }> {
+  playFullScreenFromRemote(options: { url: string }): Promise<void> {
     console.log(`playFullScreenFromRemote: options: ${options}`);
-    return { value: 'Method not implemented.' };
+    throw new Error('Method not implemented.');
   }
-  async playFullScreenFromLocal(options: { path: string }): Promise<{ value: string }> {
+  playFullScreenFromLocal(options: { path: string }): Promise<void> {
     console.log(`playFullScreenFromLocal: options: ${options}`);
-    return { value: 'Method not implemented.' };
+    throw new Error('Method not implemented.');
   }
-  async stopFullScreen(): Promise<{ value: string }> {
-    return { value: 'Method not implemented.' };
+  stopFullScreen(): Promise<void> {
+    throw new Error('Method not implemented.');
   }
 }
