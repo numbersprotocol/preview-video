@@ -47,7 +47,7 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 ### previewStartFromRemote(...)
 
 ```typescript
-previewStartFromRemote(options: { url: string; }) => Promise<void>
+previewStartFromRemote(options: { url: string; }) => Promise<{ value: string; }>
 ```
 
 Not implemented for iOS, Android no usage in our case for now
@@ -55,6 +55,8 @@ Not implemented for iOS, Android no usage in our case for now
 | Param         | Type                          |
 | ------------- | ----------------------------- |
 | **`options`** | <code>{ url: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -62,7 +64,7 @@ Not implemented for iOS, Android no usage in our case for now
 ### previewStartFromLocal(...)
 
 ```typescript
-previewStartFromLocal(options: { path: string; }) => Promise<void>
+previewStartFromLocal(options: { path: string; }) => Promise<{ value: string; }>
 ```
 
 Not implemented for iOS, Android no usage in our case for now
@@ -70,6 +72,8 @@ Not implemented for iOS, Android no usage in our case for now
 | Param         | Type                           |
 | ------------- | ------------------------------ |
 | **`options`** | <code>{ path: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -77,10 +81,12 @@ Not implemented for iOS, Android no usage in our case for now
 ### previewStop()
 
 ```typescript
-previewStop() => Promise<void>
+previewStop() => Promise<{ value: string; }>
 ```
 
 Not implemented for iOS, Android no usage in our case for now
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -88,12 +94,14 @@ Not implemented for iOS, Android no usage in our case for now
 ### playFullScreenFromRemote(...)
 
 ```typescript
-playFullScreenFromRemote(options: { url: string; }) => Promise<void>
+playFullScreenFromRemote(options: { url: string; }) => Promise<{ value: string; }>
 ```
 
 | Param         | Type                          |
 | ------------- | ----------------------------- |
 | **`options`** | <code>{ url: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -101,12 +109,14 @@ playFullScreenFromRemote(options: { url: string; }) => Promise<void>
 ### playFullScreenFromLocal(...)
 
 ```typescript
-playFullScreenFromLocal(options: { path: string; }) => Promise<void>
+playFullScreenFromLocal(options: { path: string; }) => Promise<{ value: string; }>
 ```
 
 | Param         | Type                           |
 | ------------- | ------------------------------ |
 | **`options`** | <code>{ path: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
@@ -114,8 +124,10 @@ playFullScreenFromLocal(options: { path: string; }) => Promise<void>
 ### stopFullScreen()
 
 ```typescript
-stopFullScreen() => Promise<void>
+stopFullScreen() => Promise<{ value: string; }>
 ```
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
 
