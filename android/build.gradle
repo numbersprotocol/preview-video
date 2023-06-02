@@ -54,6 +54,12 @@ repositories {
 
 
 dependencies {
+    def media3_version = "1.0.2"
+    // For media playback using ExoPlayer
+    implementation "androidx.media3:media3-exoplayer:$media3_version"
+    // For building media playback UIs
+    implementation "androidx.media3:media3-ui:$media3_version"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
