@@ -7,4 +7,10 @@ export class PreviewVideoWeb extends WebPlugin implements PreviewVideoPlugin {
     console.log('ECHO', options);
     return options;
   }
+  openVideoPlayer(_options: any): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
+  closeVideoPlayer(_options: any): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
 }

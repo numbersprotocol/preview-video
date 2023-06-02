@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`openVideoPlayer(...)`](#openvideoplayer)
+* [`closeVideoPlayer(...)`](#closevideoplayer)
 
 </docgen-index>
 
@@ -31,6 +33,36 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 | **`options`** | <code>{ value: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### openVideoPlayer(...)
+
+```typescript
+openVideoPlayer(options: any) => Promise<any>
+```
+
+| Param         | Type             |
+| ------------- | ---------------- |
+| **`options`** | <code>any</code> |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### closeVideoPlayer(...)
+
+```typescript
+closeVideoPlayer(options: any) => Promise<any>
+```
+
+| Param         | Type             |
+| ------------- | ---------------- |
+| **`options`** | <code>any</code> |
+
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
