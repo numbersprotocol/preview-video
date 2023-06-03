@@ -1,5 +1,5 @@
 export interface PreviewVideoPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
-  openVideoPlayer(options: any): Promise<any>;
-  closeVideoPlayer(options: any): Promise<any>;
+  createVideoPlayer(options: any): Promise<any>;
+  destroyVideoPlayer(options: any): Promise<any>;
 }
