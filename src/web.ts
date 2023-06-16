@@ -1,16 +1,24 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { PreviewVideoPlugin } from './definitions';
+import type {
+  CreatePreviewVideoArgs,
+  DestroyPreviewVideoArgs,
+  OnScrollArgs,
+  PreviewVideoPlugin,
+} from './definitions';
 
 export class PreviewVideoWeb extends WebPlugin implements PreviewVideoPlugin {
   async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options);
     return options;
   }
-  createVideoPlayer(_options: any): Promise<any> {
+  create(_args: CreatePreviewVideoArgs): Promise<any> {
     throw new Error('Method not implemented.');
   }
-  destroyVideoPlayer(_options: any): Promise<any> {
+  destroy(_args: DestroyPreviewVideoArgs): Promise<any> {
+    throw new Error('Method not implemented.');
+  }
+  onScroll(_args: OnScrollArgs): Promise<void> {
     throw new Error('Method not implemented.');
   }
 }

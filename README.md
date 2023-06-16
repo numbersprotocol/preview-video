@@ -14,8 +14,10 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
-* [`openVideoPlayer(...)`](#openvideoplayer)
-* [`closeVideoPlayer(...)`](#closevideoplayer)
+* [`create(...)`](#create)
+* [`destroy(...)`](#destroy)
+* [`onScroll(...)`](#onscroll)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -37,33 +39,84 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 --------------------
 
 
-### openVideoPlayer(...)
+### create(...)
 
 ```typescript
-openVideoPlayer(options: any) => Promise<any>
+create(_args: CreatePreviewVideoArgs) => Promise<any>
 ```
 
-| Param         | Type             |
-| ------------- | ---------------- |
-| **`options`** | <code>any</code> |
+| Param       | Type                                                                      |
+| ----------- | ------------------------------------------------------------------------- |
+| **`_args`** | <code><a href="#createpreviewvideoargs">CreatePreviewVideoArgs</a></code> |
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
 
-### closeVideoPlayer(...)
+### destroy(...)
 
 ```typescript
-closeVideoPlayer(options: any) => Promise<any>
+destroy(_args: DestroyPreviewVideoArgs) => Promise<any>
 ```
 
-| Param         | Type             |
-| ------------- | ---------------- |
-| **`options`** | <code>any</code> |
+| Param       | Type                                                                        |
+| ----------- | --------------------------------------------------------------------------- |
+| **`_args`** | <code><a href="#destroypreviewvideoargs">DestroyPreviewVideoArgs</a></code> |
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
+
+
+### onScroll(...)
+
+```typescript
+onScroll(args: OnScrollArgs) => Promise<void>
+```
+
+| Param      | Type                                                  |
+| ---------- | ----------------------------------------------------- |
+| **`args`** | <code><a href="#onscrollargs">OnScrollArgs</a></code> |
+
+--------------------
+
+
+### Interfaces
+
+
+#### CreatePreviewVideoArgs
+
+| Prop          | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`id`**      | <code>string</code>                                               |
+| **`src`**     | <code>string</code>                                               |
+| **`element`** | <code>HTMLElement</code>                                          |
+| **`config`**  | <code><a href="#previewvideoconfig">PreviewVideoConfig</a></code> |
+
+
+#### PreviewVideoConfig
+
+| Prop         | Type                | Description                                                     |
+| ------------ | ------------------- | --------------------------------------------------------------- |
+| **`width`**  | <code>number</code> | Override width for native Video Player                          |
+| **`height`** | <code>number</code> | Override height for native Video Player                         |
+| **`x`**      | <code>number</code> | Override absolute x coordinate position for native Video Player |
+| **`y`**      | <code>number</code> | Override absolute y coordinate position for native Video Player |
+
+
+#### DestroyPreviewVideoArgs
+
+| Prop     | Type                |
+| -------- | ------------------- |
+| **`id`** | <code>string</code> |
+
+
+#### OnScrollArgs
+
+| Prop                     | Type                                                                  |
+| ------------------------ | --------------------------------------------------------------------- |
+| **`id`**                 | <code>string</code>                                                   |
+| **`previewVideoBounds`** | <code>{ x: number; y: number; width: number; height: number; }</code> |
 
 </docgen-api>
