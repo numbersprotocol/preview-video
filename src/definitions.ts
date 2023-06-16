@@ -1,20 +1,49 @@
-import type { PluginListenerHandle } from '@capacitor/core';
+export interface CreatePreviewVideoArgs {
+  id: string;
+  src: string;
+  element: HTMLElement;
+  config: PreviewVideoConfig;
+}
 
-export type IOSPlayerDismissed = (data: any) => void;
+export interface DestroyPreviewVideoArgs {
+  id: string;
+}
+
+export interface OnScrollArgs {
+  id: string;
+  previewVideoBounds: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+}
+
+export interface PreviewVideoConfig {
+  /**
+   * Override width for native Video Player
+   */
+  width?: number;
+  /**
+   * Override height for native Video Player
+   */
+  height?: number;
+  /**
+   * Override absolute x coordinate position for native Video Player
+   */
+  x?: number;
+  /**
+   * Override absolute y coordinate position for native Video Player
+   */
+  y?: number;
+  /**
+   * Default location on the Earth towards which the camera points.
+   */
+}
 
 export interface PreviewVideoPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
-  /** Not implemented for iOS, Android no usage in our case for now */
-  previewStartFromRemote(options: { url: string }): Promise<void>;
-  /** Not implemented for iOS, Android no usage in our case for now */
-  previewStartFromLocal(options: { path: string }): Promise<void>;
-  /** Not implemented for iOS, Android no usage in our case for now */
-  previewStop(): Promise<void>;
-  playFullScreenFromRemote(options: { url: string }): Promise<void>;
-  playFullScreenFromLocal(options: { path: string }): Promise<void>;
-  stopFullScreen(): Promise<void>;
-  addListener(
-    eventName: 'iosPlayerDismissed',
-    listenerFunc: IOSPlayerDismissed,
-  ): Promise<PluginListenerHandle> & PluginListenerHandle;
+  create(_args: CreatePreviewVideoArgs): Promise<any>;
+  destroy(_args: DestroyPreviewVideoArgs): Promise<any>;
+  onScroll(args: OnScrollArgs): Promise<void>;
 }

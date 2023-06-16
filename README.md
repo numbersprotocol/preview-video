@@ -13,16 +13,11 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
-* [`previewStartFromRemote(...)`](#previewstartfromremote)
-* [`previewStartFromLocal(...)`](#previewstartfromlocal)
-* [`previewStop()`](#previewstop)
-* [`playFullScreenFromRemote(...)`](#playfullscreenfromremote)
-* [`playFullScreenFromLocal(...)`](#playfullscreenfromlocal)
-* [`stopFullScreen()`](#stopfullscreen)
-* [`addListener('iosPlayerDismissed', ...)`](#addlisteneriosplayerdismissed)
-* [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
+- [`echo(...)`](#echo)
+- [`create(...)`](#create)
+- [`destroy(...)`](#destroy)
+- [`onScroll(...)`](#onscroll)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -41,116 +36,79 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
---------------------
+---
 
-
-### previewStartFromRemote(...)
-
-```typescript
-previewStartFromRemote(options: { url: string; }) => Promise<void>
-```
-
-Not implemented for iOS, Android no usage in our case for now
-
-| Param         | Type                          |
-| ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
-
---------------------
-
-
-### previewStartFromLocal(...)
+### create(...)
 
 ```typescript
-previewStartFromLocal(options: { path: string; }) => Promise<void>
+create(_args: CreatePreviewVideoArgs) => Promise<any>
 ```
 
-Not implemented for iOS, Android no usage in our case for now
+| Param       | Type                                                                      |
+| ----------- | ------------------------------------------------------------------------- |
+| **`_args`** | <code><a href="#createpreviewvideoargs">CreatePreviewVideoArgs</a></code> |
 
-| Param         | Type                           |
-| ------------- | ------------------------------ |
-| **`options`** | <code>{ path: string; }</code> |
+**Returns:** <code>Promise&lt;any&gt;</code>
 
---------------------
+---
 
-
-### previewStop()
+### destroy(...)
 
 ```typescript
-previewStop() => Promise<void>
+destroy(_args: DestroyPreviewVideoArgs) => Promise<any>
 ```
 
-Not implemented for iOS, Android no usage in our case for now
+| Param       | Type                                                                        |
+| ----------- | --------------------------------------------------------------------------- |
+| **`_args`** | <code><a href="#destroypreviewvideoargs">DestroyPreviewVideoArgs</a></code> |
 
---------------------
+**Returns:** <code>Promise&lt;any&gt;</code>
 
+---
 
-### playFullScreenFromRemote(...)
+### onScroll(...)
 
 ```typescript
-playFullScreenFromRemote(options: { url: string; }) => Promise<void>
+onScroll(args: OnScrollArgs) => Promise<void>
 ```
 
-| Param         | Type                          |
-| ------------- | ----------------------------- |
-| **`options`** | <code>{ url: string; }</code> |
+| Param      | Type                                                  |
+| ---------- | ----------------------------------------------------- |
+| **`args`** | <code><a href="#onscrollargs">OnScrollArgs</a></code> |
 
---------------------
-
-
-### playFullScreenFromLocal(...)
-
-```typescript
-playFullScreenFromLocal(options: { path: string; }) => Promise<void>
-```
-
-| Param         | Type                           |
-| ------------- | ------------------------------ |
-| **`options`** | <code>{ path: string; }</code> |
-
---------------------
-
-
-### stopFullScreen()
-
-```typescript
-stopFullScreen() => Promise<void>
-```
-
---------------------
-
-
-### addListener('iosPlayerDismissed', ...)
-
-```typescript
-addListener(eventName: 'iosPlayerDismissed', listenerFunc: IOSPlayerDismissed) => Promise<PluginListenerHandle> & PluginListenerHandle
-```
-
-| Param              | Type                                                              |
-| ------------------ | ----------------------------------------------------------------- |
-| **`eventName`**    | <code>'iosPlayerDismissed'</code>                                 |
-| **`listenerFunc`** | <code><a href="#iosplayerdismissed">IOSPlayerDismissed</a></code> |
-
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
-
---------------------
-
+---
 
 ### Interfaces
 
+#### CreatePreviewVideoArgs
 
-#### PluginListenerHandle
+| Prop          | Type                                                              |
+| ------------- | ----------------------------------------------------------------- |
+| **`id`**      | <code>string</code>                                               |
+| **`src`**     | <code>string</code>                                               |
+| **`element`** | <code>HTMLElement</code>                                          |
+| **`config`**  | <code><a href="#previewvideoconfig">PreviewVideoConfig</a></code> |
 
-| Prop         | Type                                      |
-| ------------ | ----------------------------------------- |
-| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+#### PreviewVideoConfig
 
+| Prop         | Type                | Description                                                     |
+| ------------ | ------------------- | --------------------------------------------------------------- |
+| **`width`**  | <code>number</code> | Override width for native Video Player                          |
+| **`height`** | <code>number</code> | Override height for native Video Player                         |
+| **`x`**      | <code>number</code> | Override absolute x coordinate position for native Video Player |
+| **`y`**      | <code>number</code> | Override absolute y coordinate position for native Video Player |
 
-### Type Aliases
+#### DestroyPreviewVideoArgs
 
+| Prop     | Type                |
+| -------- | ------------------- |
+| **`id`** | <code>string</code> |
 
-#### IOSPlayerDismissed
+#### OnScrollArgs
 
-<code>(data: any): void</code>
+| Prop                     | Type                                                                  |
+| ------------------------ | --------------------------------------------------------------------- |
+| **`id`**                 | <code>string</code>                                                   |
+| **`previewVideoBounds`** | <code>{ x: number; y: number; width: number; height: number; }</code> |
 
 </docgen-api>
