@@ -13,11 +13,11 @@ npx cap sync
 
 <docgen-index>
 
-- [`echo(...)`](#echo)
-- [`create(...)`](#create)
-- [`destroy(...)`](#destroy)
-- [`onScroll(...)`](#onscroll)
-- [Interfaces](#interfaces)
+* [`echo(...)`](#echo)
+* [`create(...)`](#create)
+* [`destroy(...)`](#destroy)
+* [`onScroll(...)`](#onscroll)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -36,7 +36,8 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
----
+--------------------
+
 
 ### create(...)
 
@@ -50,7 +51,8 @@ create(_args: CreatePreviewVideoArgs) => Promise<any>
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
----
+--------------------
+
 
 ### destroy(...)
 
@@ -64,7 +66,8 @@ destroy(_args: DestroyPreviewVideoArgs) => Promise<any>
 
 **Returns:** <code>Promise&lt;any&gt;</code>
 
----
+--------------------
+
 
 ### onScroll(...)
 
@@ -76,9 +79,11 @@ onScroll(args: OnScrollArgs) => Promise<void>
 | ---------- | ----------------------------------------------------- |
 | **`args`** | <code><a href="#onscrollargs">OnScrollArgs</a></code> |
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### CreatePreviewVideoArgs
 
@@ -89,6 +94,7 @@ onScroll(args: OnScrollArgs) => Promise<void>
 | **`element`** | <code>HTMLElement</code>                                          |
 | **`config`**  | <code><a href="#previewvideoconfig">PreviewVideoConfig</a></code> |
 
+
 #### PreviewVideoConfig
 
 | Prop         | Type                | Description                                                     |
@@ -98,11 +104,13 @@ onScroll(args: OnScrollArgs) => Promise<void>
 | **`x`**      | <code>number</code> | Override absolute x coordinate position for native Video Player |
 | **`y`**      | <code>number</code> | Override absolute y coordinate position for native Video Player |
 
+
 #### DestroyPreviewVideoArgs
 
 | Prop     | Type                |
 | -------- | ------------------- |
 | **`id`** | <code>string</code> |
+
 
 #### OnScrollArgs
 
