@@ -1,6 +1,6 @@
 {
   "name": "@numbersprotocol/preview-video",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Preview Video using native iOS, Android players",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
