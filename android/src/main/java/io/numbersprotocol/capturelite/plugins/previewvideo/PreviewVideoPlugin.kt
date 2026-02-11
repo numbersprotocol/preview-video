@@ -2,8 +2,6 @@ package io.numbersprotocol.capturelite.plugins.previewvideo
 
 import android.graphics.RectF
 import android.util.Log
-import android.view.MotionEvent
-import android.view.View
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
@@ -17,29 +15,6 @@ class PreviewVideoPlugin : Plugin() {
 
     override fun load() {
         super.load()
-
-//        this.bridge.webView.setOnTouchListener(object : View.OnTouchListener {
-//            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-//                if (null != event) {
-//                    val touchX = event.x
-//                    val touchY = event.y
-//
-//                    previewVideos.forEach { entry ->
-//                        val videoPreview = entry.value
-//
-//                        val videoPreviewRect = videoPreview.getBounds()
-//                        if (videoPreviewRect.contains(touchX.toInt(), touchY.toInt())) {
-//                            videoPreview.dispatchTouchEvent(event)
-//                            return true
-//                        }
-//
-//                    }
-//
-//                }
-//
-//                return v?.onTouchEvent(event) ?: true
-//            }
-//        })
     }
 
     @PluginMethod

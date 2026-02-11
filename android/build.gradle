@@ -1,6 +1,6 @@
 ext {
     junitVersion = project.hasProperty('junitVersion') ? rootProject.ext.junitVersion : '4.13.2'
-    androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.7.0'
+    androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.7.1'
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.2.1'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.6.1'
 }
@@ -22,19 +22,16 @@ apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     namespace "io.numbersprotocol.capturelite.plugins.previewvideo"
-    compileSdk project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 35
+    compileSdk project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
     defaultConfig {
         minSdkVersion project.hasProperty('minSdkVersion') ? rootProject.ext.minSdkVersion : 23
-        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 35
+        targetSdkVersion project.hasProperty('targetSdkVersion') ? rootProject.ext.targetSdkVersion : 36
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
         dataBinding true
-    }
-    dataBinding {
-        enabled = true
     }
     buildTypes {
         release {
@@ -49,10 +46,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
-    dependencies {
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-    }
 }
 
 repositories {
@@ -60,18 +53,25 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
-    def media3_version = "1.0.2"
-    // For media playback using ExoPlayer
+    // Media3 ExoPlayer
+    def media3_version = "1.9.0"
     implementation "androidx.media3:media3-exoplayer:$media3_version"
-    // For building media playback UIs
     implementation "androidx.media3:media3-ui:$media3_version"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
+
+    // Kotlin
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1'
+
+    // AndroidX
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation 'androidx.core:core-ktx:+'
+
+    // Unit Testing
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
