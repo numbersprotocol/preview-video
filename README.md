@@ -42,14 +42,12 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 ### create(...)
 
 ```typescript
-create(_args: CreatePreviewVideoArgs) => Promise<any>
+create(_args: CreatePreviewVideoArgs) => Promise<void>
 ```
 
 | Param       | Type                                                                      |
 | ----------- | ------------------------------------------------------------------------- |
 | **`_args`** | <code><a href="#createpreviewvideoargs">CreatePreviewVideoArgs</a></code> |
-
-**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -57,14 +55,12 @@ create(_args: CreatePreviewVideoArgs) => Promise<any>
 ### destroy(...)
 
 ```typescript
-destroy(_args: DestroyPreviewVideoArgs) => Promise<any>
+destroy(_args: DestroyPreviewVideoArgs) => Promise<void>
 ```
 
 | Param       | Type                                                                        |
 | ----------- | --------------------------------------------------------------------------- |
 | **`_args`** | <code><a href="#destroypreviewvideoargs">DestroyPreviewVideoArgs</a></code> |
-
-**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
