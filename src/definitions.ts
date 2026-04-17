@@ -43,7 +43,7 @@ export interface PreviewVideoConfig {
 
 export interface PreviewVideoPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
-  create(_args: CreatePreviewVideoArgs): Promise<any>;
-  destroy(_args: DestroyPreviewVideoArgs): Promise<any>;
+  create(_args: CreatePreviewVideoArgs): Promise<void>;
+  destroy(_args: DestroyPreviewVideoArgs): Promise<void>;
   onScroll(args: OnScrollArgs): Promise<void>;
 }

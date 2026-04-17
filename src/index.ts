@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-namespace, @typescript-eslint/no-explicit-any */
 import { Capacitor, registerPlugin } from '@capacitor/core';
 
 import type { CreatePreviewVideoArgs, PreviewVideoPlugin } from './definitions';
@@ -93,7 +93,6 @@ export class PreviewVideo {
   initScrolling(): void {
     const ionContents = document.getElementsByTagName('ion-content');
 
-    // eslint-disable-next-line @typescript-eslint/prefer-for-of
     for (let i = 0; i < ionContents.length; i++) {
       (ionContents[i] as any).scrollEvents = true;
     }

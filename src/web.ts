@@ -12,10 +12,10 @@ export class PreviewVideoWeb extends WebPlugin implements PreviewVideoPlugin {
     console.log('ECHO', options);
     return options;
   }
-  create(_args: CreatePreviewVideoArgs): Promise<any> {
+  create(_args: CreatePreviewVideoArgs): Promise<void> {
     throw new Error('Method not implemented.');
   }
-  destroy(_args: DestroyPreviewVideoArgs): Promise<any> {
+  destroy(_args: DestroyPreviewVideoArgs): Promise<void> {
     throw new Error('Method not implemented.');
   }
   onScroll(_args: OnScrollArgs): Promise<void> {
