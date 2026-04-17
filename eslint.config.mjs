@@ -5,7 +5,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ['build/', 'dist/'],
+    ignores: ['build/', 'dist/', 'android/build/', 'ios/build/'],
   },
   {
     rules: {
