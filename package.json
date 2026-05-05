@@ -1,6 +1,6 @@
 {
   "name": "@numbersprotocol/preview-video",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Preview Video using native iOS, Android players",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "NumbersprotocolPreviewVideo.podspec"
+    "NumbersprotocolPreviewVideo.podspec",
+    "Package.swift"
   ],
   "author": "sultanmyrza",
   "license": "MIT",

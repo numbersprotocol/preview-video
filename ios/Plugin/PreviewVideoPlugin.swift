@@ -7,7 +7,16 @@ import Capacitor
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(PreviewVideoPlugin)
-public class PreviewVideoPlugin: CAPPlugin, UIViewControllerTransitioningDelegate {
+public class PreviewVideoPlugin: CAPPlugin, CAPBridgedPlugin, UIViewControllerTransitioningDelegate {
+    public let identifier = "PreviewVideoPlugin"
+    public let jsName = "PreviewVideo"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "playFullScreenFromRemote", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "stopFullScreen", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "method3", returnType: CAPPluginReturnCallback)
+    ]
+
     private let implementation = PreviewVideo()
 
     private var avPlayerController: AVPlayerViewController?
